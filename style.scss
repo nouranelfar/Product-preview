@@ -1,0 +1,152 @@
+//rest default
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Colors
+$Green-500: hsl(158, 36%, 37%);
+$Green-700: hsl(158, 42%, 18%);
+$Black: hsl(212, 21%, 14%);
+$Grey: hsl(228, 12%, 48%);
+$Cream: hsl(30, 38%, 92%);
+$White: hsl(0, 0%, 100%);
+
+//fonts
+@font-face {
+    font-family: 'Fraunces';
+    src: url('./assets/fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf');
+    font-style: normal;
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+    font-style: normal;
+    font-weight: 100 900;
+}
+
+$fontFraunces:'Fraunces',sans-serif;
+
+//styles
+body{
+    font-family: 'Montserrat' , sans-serif;
+    min-height: 100vh;
+    background-color: $Cream;
+    font-weight: 500;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+    width: min(92% , 30rem);
+    border-radius: 10px;
+    margin: 50px auto;
+
+    .img{
+        width: 100%;
+        display: block;
+        max-inline-size: 100%;
+        block-size: auto;
+        aspect-ratio: 1/1.05;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+.contentDetails{
+    background-color: $White;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 0 0 10px 10px;
+    padding: 25px;
+
+    small{
+        color: $Grey;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+    }
+
+    h1{
+        font-family: $fontFraunces;
+        font-weight: 700;
+    }
+
+    p{
+        line-height: 1.4;
+        color: $Grey;
+    }
+
+    a{
+        display: flex;
+        background-color: $Green-500;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        gap: 10px;
+        text-decoration: none;
+        border-radius: 10px;
+
+        span{
+            color: $White;
+            font-weight: 500;
+        }
+
+        &:hover,
+        &:focus{
+            background-color: $Green-700;
+        }
+    }
+
+    .priceContainer{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        h2{
+            color: $Green-500;
+            font-weight: 700;
+            font-size: 2rem;
+            font-family: $fontFraunces;
+        }
+
+        p{
+            text-decoration: line-through;
+            font-size: 0.8em;
+        }
+    }
+}
+
+
+@media (min-width:50rem) {
+    .contentContainer{
+        display: flex;
+        flex-direction: row;
+        width: 42rem;
+        margin: auto;
+
+        .img{
+            width: 340px;
+            border-radius: 12px 0 0 12px;
+            aspect-ratio: 0.7/1;
+        }
+
+        .contentDetails{
+            flex: 1;
+            border-radius: 0 12px 12px 0;
+            padding: 30px;
+            gap: 25px;
+        }
+    }
+
+}
